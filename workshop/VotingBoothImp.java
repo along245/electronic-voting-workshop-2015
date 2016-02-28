@@ -237,16 +237,17 @@ public class VotingBoothImp implements VotingBooth {
 				GridLayout mainLayout = new GridLayout(4,1);
 				this.setLayout(mainLayout);	
 				JPanel emptyPanel, tapePanel, votePanel, qrPanel;
-			
-				int votePanelH = 54, width = 242, rows = 0;
-			
+				int dpi = java.awt.Toolkit.getDefaultToolkit().getScreenResolution();
+
+				int votePanelH = (int)(20*dpi/25.4), width = (int)(70*dpi/25.4), rows = 0;
+				
 				emptyPanel = new JPanel(); votePanel = new JPanel();
 				tapePanel = new JPanel(); qrPanel = new JPanel();
-			  	this.setSize(new Dimension(312,242));
-				emptyPanel.setSize(new Dimension(54,242));
-				votePanel.setSize(new Dimension(54,242));
-				tapePanel.setSize(new Dimension(13,242));
-				qrPanel.setSize(new Dimension(191,242));
+			  	this.setSize(new Dimension((int)(120*dpi/25.4),width));
+				emptyPanel.setSize(new Dimension((int)(25*dpi/24.5),width));
+				votePanel.setSize(new Dimension((int)(20*dpi/24.5),width));
+				tapePanel.setSize(new Dimension((int)(5*dpi/24.5),width));
+				qrPanel.setSize(new Dimension((int)(60*dpi/24.5),width));
 				
 				for(Race r : votesInAllRaces){
 					if(r.getCurRaceProp().getNumOfSlots() >= rows)
