@@ -233,6 +233,7 @@ public class VotingBoothImp implements VotingBooth {
 	private void printPage(File qrPng, ArrayList<Race> votesInAllRaces) {
 		class Ballot extends JPanel implements Printable{
 		
+		
 			public Ballot(){
 				GridLayout mainLayout = new GridLayout(4,1);
 				this.setLayout(mainLayout);	
